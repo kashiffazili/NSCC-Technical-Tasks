@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <!--
+    Personal Introduction Page — Mohammad Kashif Fazili
+    Structured project: HTML + external CSS + external Vanilla JavaScript.
+    No frameworks or build step required.
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal introduction page of Mohammad Kashif Fazili — B.Tech CSE (AI & ML) student at SRM Institute of Science and Technology." />
+  <meta name="theme-color" content="#05070f" />
+  <title>Mohammad Kashif Fazili — CSE (AI & ML) | Personal Introduction</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon: simple KF monogram as inline SVG -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070f'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='bold' fill='%2338bdf8' text-anchor='middle'%3EKF%3C/text%3E%3C/svg%3E" />
+
+  <!-- Font: system-first + Google Fonts (graceful fallback offline) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Prevent theme flash: restore saved theme before paint -->
+  <script>
+    // Read saved theme early so the correct theme shows instantly.
+    (function () {
+      try {
+        var saved = localStorage.getItem('kashif-theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Soft background glows + grid -->
+  <div class="bg-decor" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- ================= NAVIGATION ================= -->
+  <header class="nav" id="top">
+    <div class="nav-inner">
+      <a class="brand" href="#home" aria-label="Go to home — Mohammad Kashif Fazili">
+        <span class="brand-mark" aria-hidden="true">KF</span>
+        <span>Mohammad Kashif Fazili<br /><small>CSE · AI &amp; ML</small></span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#journey">Achievements</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Dark / Light toggle. JS updates icon + label and saves to localStorage. -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" aria-pressed="false">
+          <span class="dot" aria-hidden="true"></span>
+          <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="icon-sun-hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <span class="toggle-label" id="themeLabel">Dark</span>
+        </button>
+
+        <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow hero-animate d1"><span class="pulse" aria-hidden="true"></span> Computer Science • AI/ML • Builder</p>
+          <h1 id="hero-heading" class="hero-animate d2">Hi, I&rsquo;m Mohammad <span class="gradient-text">Kashif</span> Fazili.</h1>
+          <p class="hero-sub hero-animate d3">Computer Science &amp; Engineering student exploring AI, coding, automation, and futuristic technology.</p>
+          <p class="hero-para hero-animate d4">
+            I&rsquo;m a <strong>1st Year, Semester 1 B.Tech CSE (AI &amp; ML)</strong> student at
+            <strong>SRM Institute of Science and Technology</strong>, from <strong>Srinagar, Jammu &amp; Kashmir</strong>.
+            I love exploring futuristic technologies and learning by building simple, useful things for the web.
+          </p>
+          <div class="btn-row hero-animate d5">
+            <a class="btn btn-primary" href="#journey">Explore My Journey
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/kashiffazili" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+              View GitHub
+            </a>
+          </div>
+          <div class="hero-meta hero-animate d5">
+            <span class="meta-chip">🎓 <strong>SRM IST</strong>&nbsp;CSE · AI &amp; ML</span>
+            <span class="meta-chip">📍 <strong>Srinagar</strong>&nbsp;J&amp;K</span>
+            <span class="meta-chip">✨ <strong>Exploring</strong>&nbsp;AI + Automation</span>
+          </div>
+        </div>
+
+        <!-- Photo: uses assets/profile-photo.png (your real uploaded photo) -->
+        <div class="photo-stage photo-enter" aria-label="Portrait of Mohammad Kashif Fazili">
+          <div class="photo-glow" aria-hidden="true"></div>
+          <div class="orbit orbit-1" aria-hidden="true"><span class="orbit-dot"></span></div>
+          <div class="orbit orbit-2" aria-hidden="true"></div>
+          <div class="photo-frame">
+            <div class="photo-inner">
+              <!-- Keep this file name. Save your photo as assets/profile-photo.png -->
+              <img src="assets/profile-photo.png" alt="Portrait photograph of Mohammad Kashif Fazili wearing a white shirt" width="680" height="830" fetchpriority="high" />
+              <div id="photoFallback" class="photo-fallback">
+                <p>Add your photo at<br /><strong style="color:var(--text)">assets/profile-photo.png</strong></p>
+              </div>
+            </div>
+            <div class="photo-badge badge-1" aria-hidden="true">
+              <span class="badge-icon">AI</span>
+              <span><strong>AI / ML Student</strong><span>SRM · Sem 1</span></span>
+            </div>
+            <div class="photo-badge badge-2" aria-hidden="true">
+              <span class="badge-icon">◍</span>
+              <span><strong>Builder Mindset</strong><span>Web · Automation</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <p class="kicker reveal">01 — About</p>
+        <h2 class="section-title reveal" id="about-title">About Me</h2>
+        <p class="section-sub reveal">A first-year engineer who learns best by exploring, asking questions, and building.</p>
+
+        <div class="about-grid">
+          <article class="card reveal">
+            <h3>Namaste, I&rsquo;m Kashif 👋</h3>
+            <p class="text-spaced">I am <strong>Mohammad Kashif Fazili</strong>, a first-year Computer Science and Engineering student specializing in <strong>Artificial Intelligence and Machine Learning</strong> at <strong>SRM Institute of Science and Technology</strong>.</p>
+            <p class="text-spaced">I am from <strong>Srinagar, Jammu and Kashmir</strong>, and I completed my schooling at <strong>Green Valley Educational Institute</strong>.</p>
+            <div class="about-points">
+              <div class="point">
+                <span class="point-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></span>
+                <p><strong>Coding &amp; building:</strong> I enjoy coding and building applications, websites and web pages — small projects that teach me something new.</p>
+              </div>
+              <div class="point">
+                <span class="point-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><path d="M9 22h6"/></svg></span>
+                <p><strong>AI curiosity:</strong> I&rsquo;m particularly interested in AI, prompting, MCP and automation — and experimenting with new tools.</p>
+              </div>
+              <div class="point">
+                <span class="point-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                <p><strong>Futuristic tech:</strong> My hobby is exploring new and futuristic-looking technologies and imagining where they can go.</p>
+              </div>
+            </div>
+          </article>
+
+          <aside class="card reveal reveal-delay-1" aria-label="Quick facts">
+            <h3>Quick Facts</h3>
+            <ul class="fact-list">
+              <li><span>College</span><span>SRM IST</span></li>
+              <li><span>Course</span><span>B.Tech CSE · AI &amp; ML</span></li>
+              <li><span>Year</span><span>1st Year, Sem 1</span></li>
+              <li><span>School</span><span>Green Valley Educational Institute</span></li>
+              <li><span>Hometown</span><span>Srinagar, J&amp;K</span></li>
+            </ul>
+            <div class="pill-row" aria-label="Currently exploring">
+              <span class="pill">Prompting</span>
+              <span class="pill">MCP</span>
+              <span class="pill">Automation</span>
+              <span class="pill">Web Pages</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= JOURNEY / ACHIEVEMENTS ================= -->
+    <section id="journey" aria-labelledby="journey-title">
+      <div class="container">
+        <p class="kicker reveal">02 — Journey</p>
+        <h2 class="section-title reveal" id="journey-title">Journey &amp; Achievements</h2>
+        <p class="section-sub reveal">School foundations, strong board results, and an early step into AI automation.</p>
+
+        <div class="grid-2">
+          <article class="card reveal">
+            <div class="j-card-top"><h3>🎓 College Education</h3><span class="tag">Present</span></div>
+            <p><strong>SRM Institute of Science and Technology</strong><br />B.Tech Computer Science &amp; Engineering — <strong>Artificial Intelligence &amp; Machine Learning</strong><br />1st Year, Semester 1</p>
+            <div class="score-row">
+              <div class="score"><strong>Sem 1</strong><span>Currently studying</span></div>
+              <div class="score"><strong>AI/ML</strong><span>Specialization</span></div>
+            </div>
+          </article>
+
+          <article class="card reveal reveal-delay-1">
+            <div class="j-card-top"><h3>🏫 Schooling</h3><span class="tag">Foundation</span></div>
+            <p><strong>Green Valley Educational Institute</strong><br />Completed my schooling in Srinagar, Jammu and Kashmir — where my interest in learning and technology began.</p>
+            <div class="score-row">
+              <div class="score glow"><strong>10 CGPA</strong><span>Class 10</span></div>
+              <div class="score glow"><strong>94.2%</strong><span>Class 12 Boards</span></div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="j-card-top"><h3>🥇 State-Level Academic Recognition</h3><span class="tag gold">Gold Medal</span></div>
+            <p>I was <strong>felicitated with a gold medal and certificate</strong> for my Class 10 performance after securing <strong>10th position across the state</strong>. It taught me consistency, discipline, and love for learning.</p>
+          </article>
+
+          <article class="card reveal reveal-delay-1">
+            <div class="j-card-top"><h3>🤖 MCP Workshop Completion</h3><span class="tag purple">NXT Wave</span></div>
+            <p>Awarded a <strong>certificate of completion</strong> for successfully completing the hands-on project in the <strong>&ldquo;MCP Workshop: Build AI Automations That Work for You&rdquo;</strong>, conducted by <strong>NXT Wave</strong>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <p class="kicker reveal">03 — Skills</p>
+        <h2 class="section-title reveal" id="skills-title">Skills &amp; Interests</h2>
+        <p class="section-sub reveal">Early-stage skills I&rsquo;m honestly building — no exaggeration, just steady learning.</p>
+
+        <div class="skills-grid">
+          <article class="card skill-card reveal">
+            <div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <h3>Prompting</h3>
+            <p class="skill-note">Learning to instruct AI tools clearly to get useful, reliable outputs.</p>
+            <div class="skill-bar" aria-hidden="true"><i data-level="65%"></i></div>
+          </article>
+          <article class="card skill-card reveal reveal-delay-1">
+            <div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM4 10h-2M4 14h-2M22 10h-2M22 14h-2M10 4V2M14 4V2M10 22v-2M14 22v-2"/></svg></div>
+            <h3>MCP</h3>
+            <p class="skill-note">Exploring Model Context Protocol concepts for connecting AI to tools.</p>
+            <div class="skill-bar" aria-hidden="true"><i data-level="60%"></i></div>
+          </article>
+          <article class="card skill-card reveal reveal-delay-2">
+            <div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+            <h3>AI Workflows</h3>
+            <p class="skill-note">Understanding how AI steps can be chained into helpful workflows.</p>
+            <div class="skill-bar" aria-hidden="true"><i data-level="58%"></i></div>
+          </article>
+          <article class="card skill-card reveal">
+            <div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+            <h3>Automation Concepts</h3>
+            <p class="skill-note">Learning how automation can save time and reduce repetitive work.</p>
+            <div class="skill-bar" aria-hidden="true"><i data-level="55%"></i></div>
+          </article>
+          <article class="card skill-card reveal reveal-delay-1">
+            <div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+            <h3>Coding</h3>
+            <p class="skill-note">Practising fundamentals and building small programs and pages.</p>
+            <div class="skill-bar" aria-hidden="true"><i data-level="52%"></i></div>
+          </article>
+          <article class="card skill-card reveal reveal-delay-2">
+            <div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <h3>Web Development</h3>
+            <p class="skill-note">Creating simple, clean websites with HTML, CSS and JavaScript.</p>
+            <div class="skill-bar" aria-hidden="true"><i data-level="50%"></i></div>
+          </article>
+        </div>
+
+        <div class="card interests reveal">
+          <h3>What I love doing</h3>
+          <p>Things that keep me curious after classes.</p>
+          <div class="interest-pills">
+            <span><i></i>Coding</span>
+            <span><i></i>Building Apps</span>
+            <span><i></i>Building Websites</span>
+            <span><i></i>Futuristic Technologies</span>
+            <span><i></i>Artificial Intelligence</span>
+            <span><i></i>Automation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MCP / FUTURE ================= -->
+    <section id="mcp" aria-labelledby="mcp-title">
+      <div class="container">
+        <p class="kicker reveal">04 — Deep Dive</p>
+        <h2 class="section-title reveal" id="mcp-title">Exploring the Future of AI</h2>
+        <p class="section-sub reveal">Why MCP and automation excite me as a first-year student.</p>
+
+        <div class="mcp-card reveal">
+          <div>
+            <span class="tag">MCP • Prompting • Automation</span>
+            <h3 style="font-size:1.4rem;margin:14px 0 10px;">Making AI more capable and useful.</h3>
+            <p>I&rsquo;m interested in exploring <strong>MCP (Model Context Protocol)</strong>, AI automation, and prompting — and learning how the right connections between models, tools and data can make everyday workflows smarter and more helpful.</p>
+            <p class="text-spaced">I completed the hands-on project in the <strong>&ldquo;MCP Workshop: Build AI Automations That Work for You&rdquo;</strong> by NXT Wave, which gave me a practical first look at building automations that actually work.</p>
+            <ul class="mcp-list">
+              <li>Learning how AI models connect to external tools and context.</li>
+              <li>Practising clear prompting to guide reliable behaviour.</li>
+              <li>Experimenting with small automation ideas step by step.</li>
+            </ul>
+          </div>
+          <div class="mcp-visual" aria-hidden="true">
+            <!-- Decorative glowing workflow graph (pure SVG, no library) -->
+            <svg class="nodes-svg" viewBox="0 0 360 220" fill="none" role="img" aria-label="Decorative AI workflow diagram">
+              <line class="flow-line" x1="70" y1="110" x2="150" y2="55" stroke="#38bdf8" stroke-width="1.6" opacity="0.7"/>
+              <line class="flow-line" x1="70" y1="110" x2="150" y2="165" stroke="#818cf8" stroke-width="1.6" opacity="0.7"/>
+              <line class="flow-line" x1="150" y1="55" x2="235" y2="110" stroke="#c084fc" stroke-width="1.6" opacity="0.7"/>
+              <line class="flow-line" x1="150" y1="165" x2="235" y2="110" stroke="#38bdf8" stroke-width="1.6" opacity="0.7"/>
+              <line class="flow-line" x1="235" y1="110" x2="305" y2="75" stroke="#818cf8" stroke-width="1.6" opacity="0.7"/>
+              <line class="flow-line" x1="235" y1="110" x2="305" y2="150" stroke="#c084fc" stroke-width="1.6" opacity="0.7"/>
+              <circle class="node-pulse" cx="70" cy="110" r="16" fill="rgba(56,189,248,0.18)" stroke="#38bdf8" stroke-width="1.6"/>
+              <circle cx="70" cy="110" r="5" fill="#38bdf8"/>
+              <circle class="node-pulse d2" cx="150" cy="55" r="13" fill="rgba(129,140,248,0.18)" stroke="#818cf8" stroke-width="1.6"/>
+              <circle cx="150" cy="55" r="4" fill="#818cf8"/>
+              <circle class="node-pulse d3" cx="150" cy="165" r="13" fill="rgba(192,132,252,0.18)" stroke="#c084fc" stroke-width="1.6"/>
+              <circle cx="150" cy="165" r="4" fill="#c084fc"/>
+              <circle class="node-pulse d2" cx="235" cy="110" r="18" fill="rgba(56,189,248,0.16)" stroke="#38bdf8" stroke-width="1.6"/>
+              <circle cx="235" cy="110" r="6" fill="#38bdf8"/>
+              <circle class="node-pulse" cx="305" cy="75" r="10" fill="rgba(129,140,248,0.2)" stroke="#818cf8" stroke-width="1.6"/>
+              <circle class="node-pulse d3" cx="305" cy="150" r="10" fill="rgba(192,132,252,0.2)" stroke="#c084fc" stroke-width="1.6"/>
+              <text x="70" y="142" text-anchor="middle" fill="currentColor" opacity="0.6" font-size="10" font-family="Inter,sans-serif">Prompt</text>
+              <text x="235" y="142" text-anchor="middle" fill="currentColor" opacity="0.6" font-size="10" font-family="Inter,sans-serif">MCP</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VISION ================= -->
+    <section id="vision" class="vision" aria-labelledby="vision-title">
+      <div class="container">
+        <p class="kicker reveal" style="justify-content:center;">05 — Vision</p>
+        <h2 class="section-title reveal" id="vision-title">My Vision</h2>
+        <p class="section-sub reveal" style="margin-left:auto;margin-right:auto;">Not just a job — a direction I want to grow towards.</p>
+        <div class="vision-quote reveal">
+          <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+          <blockquote>I want to become an <em>entrepreneur in technology</em> — to build products, solve meaningful problems, and create opportunities for others. I want to become an <em>employer</em>, not just an employee.</blockquote>
+          <p>I know I&rsquo;m at the very start. My focus now is simple: learn deeply, build honestly, and keep exploring.</p>
+          <div class="vision-tags">
+            <span class="pill">Exploring</span>
+            <span class="pill">Building</span>
+            <span class="pill">Creating</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <p class="kicker reveal">06 — Contact</p>
+        <h2 class="section-title reveal" id="contact-title">Let&rsquo;s Connect</h2>
+        <p class="section-sub reveal">I&rsquo;d love to learn from seniors, builders, and fellow students. Find me here:</p>
+        <div class="contact-grid">
+          <a class="card social-card reveal" href="https://github.com/kashiffazili" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile of Mohammad Kashif Fazili in a new tab">
+            <span class="social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+            </span>
+            <span><h3>GitHub</h3><small>github.com/kashiffazili</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="card social-card reveal reveal-delay-1" href="https://www.linkedin.com/in/mohammad-kashif-fazili-436b4b429/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile of Mohammad Kashif Fazili in a new tab">
+            <span class="social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+            </span>
+            <span><h3>LinkedIn</h3><small>linkedin.com/in/mohammad-kashif-fazili</small></span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="footer-inner">
+      <p><strong>© <span id="year">2026</span> Mohammad Kashif Fazili</strong> · Exploring. Building. Creating.</p>
+      <p>Built with HTML, CSS &amp; JavaScript</p>
+      <div class="footer-links">
+        <a href="#home">Back to top ↑</a>
+        <a href="https://github.com/kashiffazili" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
