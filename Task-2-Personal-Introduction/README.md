@@ -55,14 +55,15 @@ No React, Tailwind, Bootstrap, or build tools are required.
 ```text
 Task-2-Personal-Introduction/
 ├── assets/
+│   │── demo-personal-page.png
 │   └── profile-photo.png
-├── index.html
-├── style.css
-├── script.js
-├── README.md
-├── .gitignore
+│── .gitignore
 ├── .nojekyll
-└── LICENSE
+├── LICENSE
+├── README.md
+├── index.html
+├── script.js
+└── style.css
 ```
 
 ## Photo
@@ -109,7 +110,7 @@ The layout uses fluid sizing, CSS Grid/Flexbox and media queries. Navigation bec
 6. Open the live URL shown by GitHub Pages.
 7. Confirm the page works and keep the verified URL in the **Live Demo** section above.
 
-## Screenshort
+## Screenshot
 `assets/demo-personal-page.png` 
 
 ## Concepts Learned
