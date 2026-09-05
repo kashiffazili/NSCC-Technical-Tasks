@@ -6,8 +6,6 @@ The project demonstrates client-side form validation, regular expressions, async
 
 **GitHub Pages:** `https://kashiffazili.github.io/nscc-signup-dashboard/`
 
-> **Before submission:** replace `YOUR-GITHUB-USERNAME` with your actual GitHub username after enabling GitHub Pages. Keep this link updated in this task folder's README as requested in the submission instructions.
-
 ## 🖼️ Project Preview
 
 ![NSCC Signup Form and User Dashboard](assets/demo-dashboard.png)
@@ -64,11 +62,12 @@ nscc-signup-dashboard/
 ├── assets/
 │   ├── demo-dashboard.png  # Project screenshot for documentation
 │   └── nscc-logo.png       # NSCC logo with transparent background
-├── index.html               # Page structure and accessible UI
-├── style.css                # Complete responsive styling
-├── script.js                # Validation, hashing, storage, rendering, and events
-├── .gitignore               # Common local/editor files to ignore
-└── README.md                # Project documentation
+├── .gitignore              # Common local/editor files to ignore
+├── LICENSE                 
+├── README.md               # Project documentation
+├── index.html              # Page structure and accessible UI
+├── script.js               # Validation, hashing, storage, rendering, and events
+└── style.css               # Complete responsive styling
 ```
 
 The repository intentionally contains only the files needed for the task. There is **no build system or dependency installation**.
