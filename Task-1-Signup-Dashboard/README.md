@@ -4,7 +4,7 @@ A clean, responsive **HTML + CSS + vanilla JavaScript** web application built fo
 
 The project demonstrates client-side form validation, regular expressions, asynchronous password hashing with the Web Crypto API, browser `localStorage`, dynamic DOM rendering, and individual user deletion.
 
-**GitHub Pages:** `[https://kashiffazili.github.io/nscc-signup-dashboard/](https://kashiffazili.github.io/NSCC-Technical-Tasks/Task-1-Signup-Dashboard/)`
+**GitHub Pages:** `https://kashiffazili.github.io/NSCC-Technical-Tasks/Task-1-Signup-Dashboard/`
 
 ## 🖼️ Project Preview
 
