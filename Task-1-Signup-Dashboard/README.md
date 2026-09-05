@@ -58,7 +58,7 @@ No React, TypeScript, Tailwind, Bootstrap, or other framework/library is require
 ## 📁 Project Structure
 
 ```text
-nscc-signup-dashboard/
+Task-1-Signup-Dashboard/
 ├── assets/
 │   ├── demo-dashboard.png  # Project screenshot for documentation
 │   └── nscc-logo.png       # NSCC logo with transparent background
@@ -105,7 +105,7 @@ Form submission is intercepted
         ↓
 Username / Email / Password validation
         ↓
-Check for duplicate email
+Check for duplicate username and email
         ↓
 SHA-256 password hashing
         ↓
@@ -185,16 +185,26 @@ Re-render dashboard
 
 ## 🚀 Deployment — GitHub Pages
 
-This project is a static website, so it can be deployed directly with GitHub Pages. No build command or package installation is required.
+This project is deployed as part of the `NSCC-Technical-Tasks` repository using GitHub Pages.
 
-1. Create a **public** GitHub repository named `nscc-signup-dashboard`.
-2. Upload the contents of this folder to the repository root. Make sure `index.html` is at the root level.
-3. Open **Settings → Pages** in the GitHub repository.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select the `main` branch and the `/ (root)` folder, then click **Save**.
-6. Wait for GitHub Pages to finish deploying.
-7. Open the generated Pages URL and test the complete application.
-8. Replace the placeholder in the **Live Demo** section above with the actual deployed URL.
+### Repository structure
+
+The project is located at:
+
+`Task-1-Signup-Dashboard/`
+
+### Deployment steps
+
+1. Push the project to the `main` branch of the `NSCC-Technical-Tasks` repository.
+2. Open **Settings → Pages**.
+3. Under **Build and deployment**, select **Deploy from a branch**.
+4. Select the `main` branch and `/ (root)` folder.
+5. Save and wait for GitHub Pages to deploy.
+6. Open the live URL and test the application.
+
+### Live Demo
+
+https://kashiffazili.github.io/NSCC-Technical-Tasks/Task-1-Signup-Dashboard/
 
 ### Deployment checklist
 
