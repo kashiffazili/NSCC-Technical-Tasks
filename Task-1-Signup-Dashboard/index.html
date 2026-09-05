@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="NSCC Signup & User Dashboard — a vanilla JavaScript recruitment task."
+  />
+  <title>NSCC Signup & User Dashboard</title>
+  <link rel="icon" type="image/png" href="assets/nscc-logo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+  <body>
+    <!-- ======================= Header ======================= -->
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="assets/nscc-logo.png" alt="" />
+        </span>
+        <span class="brand-text">
+          <strong>NSCC</strong>
+          <small>Newton School Coding Club</small>
+        </span>
+      </div>
+      <span class="task-pill">
+        <span class="pill-dot" aria-hidden="true"></span>
+        Web Dev Recruitment Task
+      </span>
+    </header>
+
+    <main class="container">
+      <!-- ======================= Intro ======================= -->
+      <section class="intro">
+        <h1>Become a member of <span>NSCC</span>.</h1>
+        <p>
+          Sign up below to register. Your password is hashed with SHA-256 in your
+          browser before anything is stored, and the dashboard updates instantly —
+          no page refresh needed.
+        </p>
+      </section>
+
+      <div class="layout">
+        <!-- ======================= Signup form ======================= -->
+        <section class="card form-card" aria-labelledby="form-title">
+          <div class="card-header">
+            <h2 id="form-title">Create your account</h2>
+            <p class="card-subtitle">All fields are validated before saving.</p>
+          </div>
+
+          <!-- novalidate disables the browser's default bubbles so our own JS validation runs -->
+          <form id="signup-form" novalidate>
+            <div class="field">
+              <label for="username">Username</label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  placeholder="e.g. ada_lovelace"
+                  autocomplete="username"
+                  maxlength="30"
+                  required
+                  aria-describedby="username-error"
+                />
+              </div>
+              <p class="error-message" id="username-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  maxlength="254"
+                  required
+                  aria-describedby="email-error"
+                />
+              </div>
+              <p class="error-message" id="email-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="password">Password</label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="At least 6 characters"
+                  autocomplete="new-password"
+                  minlength="6"
+                  maxlength="128"
+                  required
+                  aria-describedby="password-error"
+                  spellcheck="false"
+                />
+                <button
+                  type="button"
+                  class="icon-button"
+                  id="toggle-password"
+                  aria-label="Show password"
+                >
+                  <svg id="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  <svg id="eye-closed" class="hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+                    <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
+                    <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
+                    <line x1="2" y1="2" x2="22" y2="22" />
+                  </svg>
+                </button>
+              </div>
+              <p class="error-message" id="password-error" aria-live="polite"></p>
+            </div>
+
+            <button class="button primary" id="signup-button" type="submit">
+              <span class="btn-label">
+                Sign Up
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </span>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+
+            <p class="form-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              Passwords are hashed with <strong>SHA-256</strong> (Web Crypto API) —
+              the plain text never touches localStorage.
+            </p>
+          </form>
+        </section>
+
+        <!-- ======================= Dashboard ======================= -->
+        <section class="card table-card" aria-labelledby="dashboard-title">
+          <div class="card-header table-card-header">
+            <div>
+              <h2 id="dashboard-title">User Dashboard</h2>
+              <p class="card-subtitle">
+                Persisted in your browser with <code>localStorage</code>.
+              </p>
+            </div>
+            <span class="count-pill"><span id="user-count">0</span> registered</span>
+          </div>
+
+          <div class="table-wrap" id="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                  <th class="action-col">Action</th>
+                </tr>
+              </thead>
+              <tbody id="users-tbody"></tbody>
+            </table>
+          </div>
+
+          <div class="empty-state hidden" id="empty-state">
+            <span class="empty-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </span>
+            <h3>No users registered yet</h3>
+            <p>Sign up with the form and new members will appear here instantly.</p>
+          </div>
+
+          <p class="table-note">
+            The Password column shows the SHA-256 hash — never the original
+            password. Click a hash to copy the full value.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand" aria-label="NSCC — Newton School Coding Club">
+        <img src="assets/nscc-logo.png" alt="" />
+        <strong>NSCC</strong>
+      </div>
+      <p>Built with HTML, CSS and vanilla JavaScript — Web Crypto API + localStorage.</p>
+      <p class="footer-sub">Submitted for the NSCC recruitment task.</p>
+    </footer>
+
+    <!-- ======================= Toast ======================= -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      <span class="toast-dot" aria-hidden="true"></span>
+      <span id="toast-message"></span>
+    </div>
+
+    <!-- ======================= Delete confirmation modal ======================= -->
+    <div
+      class="modal-overlay"
+      id="confirm-modal"
+      hidden
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="confirm-title"
+      aria-describedby="confirm-text"
+    >
+      <div class="modal">
+        <span class="modal-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 6h18" />
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+            <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+            <line x1="10" y1="11" x2="10" y2="17" />
+            <line x1="14" y1="11" x2="14" y2="17" />
+          </svg>
+        </span>
+        <h3 id="confirm-title">Delete this user?</h3>
+        <p id="confirm-text"></p>
+        <div class="modal-actions">
+          <button class="button ghost" id="cancel-delete" type="button">Cancel</button>
+          <button class="button danger" id="confirm-delete" type="button">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
